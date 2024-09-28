@@ -34,7 +34,7 @@ public interface Stack<T> {
      * Search for item in Stack
      * @return index of item else, if empty -1.
      */
-    int search(Object o);
+    int search(T o);
 
     /**
      * Return number of items in Stack

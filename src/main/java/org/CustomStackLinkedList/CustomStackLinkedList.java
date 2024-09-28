@@ -35,7 +35,7 @@ public class CustomStackLinkedList<T> implements Stack<T> {
         return item;
     }
 
-    public int search(final Object item) {
+    public int search(final T item) {
         int index = 0;
         for (Node x = head; x != null; x = x.nextNode, index++)
             if (x.data == item)

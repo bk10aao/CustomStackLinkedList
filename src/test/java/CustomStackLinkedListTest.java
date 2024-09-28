@@ -17,8 +17,8 @@ public class CustomStackLinkedListTest {
 
     @Test
     public void pushInteger_10_toDefaultStack_returnSizeOf_1_and_elementsValueOf_10() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
-        Object pushedItem = customStackLinkedList.push(10);
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
+        int pushedItem = customStackLinkedList.push(10);
         assertFalse(customStackLinkedList.isEmpty());
         assertEquals(pushedItem, 10);
         assertEquals(1, customStackLinkedList.getSize());
@@ -26,14 +26,14 @@ public class CustomStackLinkedListTest {
 
     @Test
     public void pushInteger_10_toCustomStackLinkedListSizeOf_32_returnSizeOf_1_and_elementsValueOf_10() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         assertEquals(customStackLinkedList.push(10), 10);
         assertFalse(customStackLinkedList.isEmpty());
     }
 
     @Test
     public void pushThreeIntegers__toCustomStackLinkedListSizeOf_2_returnSizeOf_3_andStackSizeOf_4() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         for(int i = 0; i < 3; i++)
             customStackLinkedList.push(10);
         assertFalse(customStackLinkedList.isEmpty());
@@ -42,7 +42,7 @@ public class CustomStackLinkedListTest {
 
     @Test
     public void pushFiveIntegers__toCustomStackLinkedListSizeOf_2_return_size_of_5_andStackSizeOf_8() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         for(int i = 0; i < 5; i++)
             customStackLinkedList.push(10);
         assertFalse(customStackLinkedList.isEmpty());
@@ -51,13 +51,13 @@ public class CustomStackLinkedListTest {
 
     @Test
     public void popElement_fromEmptyStack_returns_EmptyStackException() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         assertThrows(EmptyStackException.class, customStackLinkedList::pop);
     }
 
     @Test
     public void popElement_fromStack_returns_10() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         customStackLinkedList.push(10);
         assertEquals(1, customStackLinkedList.getSize());
         assertFalse(customStackLinkedList.isEmpty());
@@ -68,13 +68,13 @@ public class CustomStackLinkedListTest {
 
     @Test
     public void peek_onEmptyStack_returns_EmptyStackException() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         assertThrows(EmptyStackException.class, customStackLinkedList::peek);
     }
 
     @Test
     public void peek_onStackOfTreeItems_10_20_30_returns_3() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         for(int i = 0; i < 3; i++)
             customStackLinkedList.push((i + 1) * 10);
         assertEquals(30, customStackLinkedList.peek());
@@ -82,13 +82,13 @@ public class CustomStackLinkedListTest {
 
     @Test
     public void pop_onEmptyStack_returns_EmptyStackException() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         assertThrows(EmptyStackException.class, customStackLinkedList::pop);
     }
 
     @Test
     public void popOnDefaultStack_of_10_returns_10_and_sizeOf_0() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         customStackLinkedList.push(30);
         assertEquals(30, customStackLinkedList.pop());
         assertTrue(customStackLinkedList.isEmpty());
@@ -97,7 +97,7 @@ public class CustomStackLinkedListTest {
 
     @Test
     public void popOnDefaultStack_of_10_20_30_returns_30() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         for(int i = 0; i < 3; i++)
             customStackLinkedList.push((i + 1) * 10);
         assertEquals(30, customStackLinkedList.pop());
@@ -107,7 +107,7 @@ public class CustomStackLinkedListTest {
 
     @Test
     public void createStackOfSize_8_with_eightItems_whenPopCalled_6_times_returns_stack_size_of_2() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         for(int i = 0; i < 8; i++)
             customStackLinkedList.push((i + 1) * 10);
         for(int i = 0; i < 6; i++)
@@ -119,19 +119,19 @@ public class CustomStackLinkedListTest {
 
     @Test
     public void searchEmptyDefaultStack_returns_negative_1() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         assertEquals(-1, customStackLinkedList.search(10));
     }
 
     @Test
     public void searchStackOfSize_10_with_no_values_returns_negative_1() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         assertEquals(-1, customStackLinkedList.search(10));
     }
 
     @Test
     public void searchDefaultStack_with_10_items_with_value_thatDoesNotExist_returns_negative_1() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         for(int i = 0; i < 10; i++)
             customStackLinkedList.push((i + 1) * 10);
         assertEquals(-1, customStackLinkedList.search(1_000));
@@ -139,7 +139,7 @@ public class CustomStackLinkedListTest {
 
     @Test
     public void searchStackOfSize_10_with_10_items_with_value_thatDoesNotExist_returns_negative_1() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         for(int i = 0; i < 10; i++)
             customStackLinkedList.push((i + 1) * 10);
         assertEquals(-1, customStackLinkedList.search(1_000));
@@ -147,7 +147,7 @@ public class CustomStackLinkedListTest {
 
     @Test
     public void searchDefaultStack_10_with_values_10_20_30_40_50_for_30_returns_indexOf_2() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         for(int i = 0; i < 10; i++)
             customStackLinkedList.push((i + 1) * 10);
         assertEquals(2, customStackLinkedList.search(30));
@@ -155,7 +155,7 @@ public class CustomStackLinkedListTest {
 
     @Test
     public void searchStackOfSize_10_with_values_10_20_30_40_50_for_30_returns_indexOf_2() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         for(int i = 0; i < 10; i++)
             customStackLinkedList.push((i + 1) * 10);
         assertEquals(2, customStackLinkedList.search(30));
@@ -163,7 +163,7 @@ public class CustomStackLinkedListTest {
 
     @Test
     public void givenSetOf_0_1_2_3_4_5_returnsCorrectStringRepresentation_on_toString() {
-        CustomStackLinkedList<Object> customStackLinkedList = new CustomStackLinkedList<>();
+        CustomStackLinkedList<Integer> customStackLinkedList = new CustomStackLinkedList<>();
         for(int i = 0; i <= 5; i++)
             customStackLinkedList.push(i);
         assertEquals("{ 5, 4, 3, 2, 1, 0 }", customStackLinkedList.toString());
