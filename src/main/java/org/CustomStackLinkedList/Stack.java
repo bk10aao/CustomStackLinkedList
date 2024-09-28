@@ -41,4 +41,10 @@ public interface Stack<T> {
      * @return Integer value of number of items in Stack
      */
     int getSize();
+
+    /**
+     * Return String representation of Stack
+     * @return String representation of Stack items in Stack
+     */
+    String toString();
 }
