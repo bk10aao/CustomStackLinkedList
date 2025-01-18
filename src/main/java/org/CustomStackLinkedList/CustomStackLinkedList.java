@@ -18,9 +18,8 @@ public class CustomStackLinkedList<T> implements Stack<T> {
     }
 
     public T pop() {
-        if (size == 0) {
+        if (size == 0)
             throw new EmptyStackException();
-        }
         T headValue = head.data;
         head = head.nextNode;
         size--;
@@ -60,7 +59,7 @@ public class CustomStackLinkedList<T> implements Stack<T> {
 
     private class Node {
 
-        private T data;
+        private final T data;
         private Node nextNode;
 
         public Node(T data) {
